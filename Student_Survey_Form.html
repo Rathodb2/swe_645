@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Survey Form</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('Forest_Bridge.jpeg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Poppins', sans-serif; 
+        }
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.9); 
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .w3-input, .w3-select, textarea {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+        button {
+            width: 48%;
+            margin: 10px 1%;
+        }
+        .w3-button {
+            transition: 0.3s;
+        }
+        .w3-button:hover {
+            opacity: 0.8;
+        }
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: #2C3E50;
+            font-size: 28px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h2::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: #2980B9;
+            margin: 10px auto;
+        }
+        label {
+            font-weight: 500;
+            color: #34495E;
+        }
+        .w3-input, .w3-select, textarea {
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+        }
+        .w3-button {
+            font-family: 'Poppins', sans-serif;
+            font-size: 16px;
+        }
+        .success-message {
+            display: none;
+            text-align: center;
+            font-size: 20px;
+            color: green;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container w3-card">
+        <h2>Student Survey Form</h2>
+
+        <form id="surveyForm" onsubmit="submitForm(event)" class="w3-container">
+
+            <label>First Name:</label>
+            <input type="text" name="first_name" class="w3-input w3-border" required>
+
+            <label>Last Name:</label>
+            <input type="text" name="last_name" class="w3-input w3-border" required>
+
+            <label>Street Address:</label>
+            <input type="text" name="address" class="w3-input w3-border" required>
+
+            <label>City:</label>
+            <input type="text" name="city" class="w3-input w3-border" required>
+
+            <label>State:</label>
+            <input type="text" name="state" class="w3-input w3-border" required>
+
+            <label>ZIP Code:</label>
+            <input type="text" name="zip" class="w3-input w3-border" required>
+
+            <label>Telephone Number:</label>
+            <input type="text" name="phone" class="w3-input w3-border" required>
+
+            <label>Email:</label>
+            <input type="email" name="email" class="w3-input w3-border" required>
+
+            <label>Date of Survey:</label>
+            <input type="date" name="survey_date" class="w3-input w3-border" required>
+
+            <label>What did you like most about the campus?</label><br>
+            <input type="checkbox" name="likes[]" value="students"> Students
+            <input type="checkbox" name="likes[]" value="location"> Location
+            <input type="checkbox" name="likes[]" value="campus"> Campus
+            <input type="checkbox" name="likes[]" value="atmosphere"> Atmosphere
+            <input type="checkbox" name="likes[]" value="dorm_rooms"> Dorm Rooms
+            <input type="checkbox" name="likes[]" value="sports"> Sports
+            <br><br>
+
+            <label>How did you become interested in the university?</label><br>
+            <input type="radio" name="interest" value="friends" > Friends
+            <input type="radio" name="interest" value="television"> Television
+            <input type="radio" name="interest" value="internet"> Internet
+            <input type="radio" name="interest" value="other"> Other
+            <br><br>
+
+            <label>Would you recommend this school to others?</label>
+            <select name="recommendation" class="w3-select w3-border">
+                <option value="very_likely">Very Likely</option>
+                <option value="likely">Likely</option>
+                <option value="unlikely">Unlikely</option>
+            </select>
+
+            <label>Enter 10 comma-separated numbers (1-100) for the raffle:</label>
+            <input type="text" name="raffle" class="w3-input w3-border"  placeholder="e.g., 10, 23, 45, 67, 89">
+            
+            <label>Additional Comments:</label>
+            <textarea name="comments" class="w3-input w3-border"></textarea>
+
+            <br>
+            <button type="submit" class="w3-button w3-green w3-round-large">Submit</button>
+            <button type="reset" class="w3-button w3-red w3-round-large">Cancel</button>
+
+        </form>
+
+
+        <div id="successMessage" class="success-message">
+            Thank you! Your form has been submitted successfully.
+        </div>
+
+    </div>
+
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); 
+            
+
+            document.getElementById('successMessage').style.display = 'block';
+            
+
+            document.getElementById('surveyForm').reset();
+        }
+    </script>
+
+</body>
+</html>
